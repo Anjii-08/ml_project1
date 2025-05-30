@@ -23,7 +23,7 @@ def save_model(file_path,obj):
 def load_model(file_path):
     try:
         with open(file_path,"rb") as file_obj:
-            return pickle.dump(file_obj)
+            return pickle.load(file_obj)
     except Exception as e:
         raise CustomException(e,sys)
     

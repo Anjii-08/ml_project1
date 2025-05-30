@@ -69,7 +69,7 @@ class DataTransformation:
             logging.info("Error in data transformation")
             raise CustomException(e,sys)
     
-    def initiate_data_trainsformation(self,train_path,test_path):
+    def initiate_data_transformation(self,train_path,test_path):
         try:
             train_df=pd.read_csv(train_path)
             test_df=pd.read_csv(test_path)
@@ -115,4 +115,4 @@ if __name__=="__main__":
     obj=DataIngestion()
     train_data_path,test_data_path=obj.initiate_data_ingestion()
     data_transformation=DataTransformation()
-    data_transformation.initiate_data_trainsformation(train_data_path,test_data_path)
+    data_transformation.initiate_data_transformation(train_data_path,test_data_path)

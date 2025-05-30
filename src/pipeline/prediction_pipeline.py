@@ -1,6 +1,6 @@
 import os
 import sys
-from src.utils import load_object
+from src.utils import load_model
 from src.exception import CustomException
 from src.logger import logging
 import pandas as pd
@@ -14,8 +14,8 @@ class PredictionPipeline:
             preprocessor_path=os.path.join("artifact","preprocessor.pkl")
             model_path=os.path.join("artifact","model.pkl")
 
-            preprocessor=load_object(preprocessor_path)
-            model=load_object(model_path)
+            preprocessor=load_model(preprocessor_path)
+            model=load_model(model_path)
 
             data_scaled=preprocessor.transform(features)
 
@@ -35,7 +35,7 @@ class CustomData:
         self.z=z
         self.cut=cut
         self.color=color
-        self.clariyt=clarity
+        self.clarity=clarity
 
     def get_data_as_dataframe(self):
         try:
